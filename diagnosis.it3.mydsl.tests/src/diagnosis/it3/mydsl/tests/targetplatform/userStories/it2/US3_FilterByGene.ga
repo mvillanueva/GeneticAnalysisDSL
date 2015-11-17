@@ -1,0 +1,60 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "US3_FilterByGene", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 394.5, 
+                "top": 440
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SnpSift Filter", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 667.5, 
+                "top": 439
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "snpSift_filter", 
+            "tool_state": "{\"__page__\": 0, \"expr\": \"\\\"EFF[*].GENE='BRCA1' | EFF[*].GENE='BRCA2'\\\"\", \"__rerun_remap_job_id__\": null, \"input\": \"null\"}", 
+            "tool_version": "latest", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

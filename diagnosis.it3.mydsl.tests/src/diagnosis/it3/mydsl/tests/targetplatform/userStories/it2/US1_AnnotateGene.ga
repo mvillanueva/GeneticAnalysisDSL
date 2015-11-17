@@ -1,0 +1,99 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "US1_AnnotateGene", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 341.5, 
+                "top": 513.5
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SnpEff [iteration 2]", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "statsFile", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 642.5, 
+                "top": 482.5
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionstatsFile": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "statsFile"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "snpEff_iteration2", 
+            "tool_state": "{\"__page__\": 0, \"outputFormat\": \"\\\"vcf\\\"\", \"lof\": \"\\\"False\\\"\", \"inputFormat\": \"\\\"vcf\\\"\", \"canon\": \"\\\"False\\\"\", \"motif\": \"\\\"False\\\"\", \"udLength\": \"\\\"5000\\\"\", \"genomeVersion\": \"\\\"hg19 \\\"\", \"generate_stats\": \"\\\"False\\\"\", \"hgvs\": \"\\\"False\\\"\", \"input\": \"null\", \"translationOption\": \"{\\\"translation\\\": \\\"True\\\", \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"geneOption\\\": {\\\"geneFieldname\\\": \\\"Gene\\\", \\\"geneCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"__current_case__\\\": 0, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_version": "latest", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "ENSEMBL variant effect predictor [Iteration 2]", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 643, 
+                "top": 672.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "ensembl_iteration2", 
+            "tool_state": "{\"database_options\": \"{\\\"outputFormat\\\": {\\\"annotateOptions\\\": {\\\"annotate_vcf\\\": \\\"True\\\", \\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"geneOption\\\": {\\\"geneFieldname\\\": \\\"Gene\\\", \\\"geneCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}}, \\\"__current_case__\\\": 0, \\\"outputFormatOption\\\": \\\"vcf\\\"}, \\\"__current_case__\\\": 0, \\\"annotateGene\\\": {\\\"annotate_gene\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"database_options_selector\\\": \\\"offline\\\", \\\"useRefseq\\\": {\\\"use_refseq\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"annotateHGVS\\\": {\\\"annotate_hgvs\\\": \\\"False\\\", \\\"__current_case__\\\": 1}}\", \"input\": \"null\", \"__rerun_remap_job_id__\": null, \"species\": \"\\\"homo_sapiens\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

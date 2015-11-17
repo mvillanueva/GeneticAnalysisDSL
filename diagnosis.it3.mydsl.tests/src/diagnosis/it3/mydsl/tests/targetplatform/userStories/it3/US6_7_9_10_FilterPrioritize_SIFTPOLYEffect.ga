@@ -1,0 +1,430 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "US6_7_9_10_FilterPrioritize_SIFTPOLYEffect", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 342.0833740234375, 
+                "top": 426
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 703.0833740234375, 
+                "top": 113
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Tolerated"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.05001\\\"\", \"algorithm\": \"\\\"sift\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"1.0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 704.0833740234375, 
+                "top": 205
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Deleterious"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.0\\\"\", \"algorithm\": \"\\\"sift\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.05\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 702.5833740234375, 
+                "top": 347
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "result Benign"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.0001\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.15\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "id": 4, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 703.5833740234375, 
+                "top": 435
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Possibly Damaging"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.15001\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.85\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "id": 5, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 705.5833740234375, 
+                "top": 526
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Probably Damaging"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.850001\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"1.0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "id": 6, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 706.5833740234375, 
+                "top": 681
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Ascendant"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"order\\\": \\\"asc\\\", \\\"__current_case__\\\": 0, \\\"sort_prediction\\\": \\\"True\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.01\\\"\", \"algorithm\": \"\\\"sift\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.4\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "7": {
+            "annotation": "", 
+            "id": 7, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 706.5833740234375, 
+                "top": 775
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Descendant"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"order\\\": \\\"desc\\\", \\\"__current_case__\\\": 0, \\\"sort_prediction\\\": \\\"True\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.01\\\"\", \"algorithm\": \"\\\"sift\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.4\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "8": {
+            "annotation": "", 
+            "id": 8, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 708.8125, 
+                "top": 867.75
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"order\\\": \\\"asc\\\", \\\"__current_case__\\\": 0, \\\"sort_prediction\\\": \\\"True\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.2\\\"\", \"algorithm\": \"\\\"sift\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"1.0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "9": {
+            "annotation": "", 
+            "id": 9, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 709.8125, 
+                "top": 1005.75
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Score1 Ascendant"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"order\\\": \\\"asc\\\", \\\"__current_case__\\\": 0, \\\"sort_prediction\\\": \\\"True\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.001\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"1.0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "10": {
+            "annotation": "", 
+            "id": 10, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 710.8125, 
+                "top": 1102.75
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Score1 Descendant"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"order\\\": \\\"desc\\\", \\\"__current_case__\\\": 0, \\\"sort_prediction\\\": \\\"True\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.001\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"1.0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "11": {
+            "annotation": "", 
+            "id": 11, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 714.8125, 
+                "top": 1199.75
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Score2 Ascendant"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"order\\\": \\\"asc\\\", \\\"__current_case__\\\": 0, \\\"sort_prediction\\\": \\\"True\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.15\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.85\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

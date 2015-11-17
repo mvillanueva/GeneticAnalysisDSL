@@ -1,0 +1,105 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "US8_PrioritizeByMAF", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 220, 
+                "top": 272
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Sort MAF tool", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 533, 
+                "top": 254
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Score1"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "sortMAF", 
+            "tool_state": "{\"sort\": \"{\\\"sort_MAF\\\": \\\"True\\\", \\\"__current_case__\\\": 0, \\\"position\\\": \\\"1\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.15\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"MAF\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.4\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Sort MAF tool", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 544, 
+                "top": 449
+            }, 
+            "post_job_actions": {
+                "RenameDatasetActionvcf_output": {
+                    "action_arguments": {
+                        "newname": "Result Score 2"
+                    }, 
+                    "action_type": "RenameDatasetAction", 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "sortMAF", 
+            "tool_state": "{\"sort\": \"{\\\"sort_MAF\\\": \\\"True\\\", \\\"__current_case__\\\": 0, \\\"position\\\": \\\"1\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.1\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"MAF\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.2\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+
+	<template id="t1" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_Annotate" deleted="false" description="Add complete instruction" enabled="true" name="Annotate">Annotate variations with &lt;annotation names&gt;</template>
+
+	<template id="t2" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_Find" deleted="false" description="Add complete analysis" enabled="true" name="Find">Find putative variants for &lt;disease name&gt;&#13;Read variations genotypes from a VCF file from input&#13;Annotate variations with &lt;annotation names&gt;&#13;Filter variations by &lt;filtering criteria&gt;&#13;Report variations with &lt;annotation names&gt;</template>
+	<template id="t3"  autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_Filter" deleted="false" description="Add complete instruction" enabled="true" name="Filter">Filter variations by &lt;fitering criteria&gt;</template>
+  	<template id="t4" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_Read" deleted="false" description="Add complete instruction" enabled="true" name="Read">Read variations genotypes from a VCF file from &lt;source&gt;</template>
+	<template id="t5" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_[" deleted="false" description="Write Sift Score Deleterious" enabled="true" name="Sift Score Tolerated">[0.0,0.5]</template>
+	<template id="t6" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_[" deleted="false" description="Write Sift Score Tolerated" enabled="true" name="Sift Score Tolerated">[0.05,1.0]</template>
+	<template id="t7" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_[" deleted="false" description="Write Polyphen Score Benign" enabled="true" name="Polyphen Score Benign">[0.0,0.452]</template>
+	<template id="t8" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_[" deleted="false" description="Write Sift Score Possibly Damaging" enabled="true" name="Polyphen Score Possibly Damaging">[0.453,0.956]</template>
+	<template id="t9" autoinsert="true" context="diagnosis.it3.mydsl.MyDiag.kw_[" deleted="false" description="Write Sift Score Probably Damaging" enabled="true" name="Polyphen Score Probably Damaging">[0.957,1.0]</template>
+</templates>

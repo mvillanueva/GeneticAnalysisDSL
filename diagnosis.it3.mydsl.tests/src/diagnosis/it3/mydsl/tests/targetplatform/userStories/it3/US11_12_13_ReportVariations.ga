@@ -1,0 +1,112 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "US11_12_13_ReportVariations", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "MAF"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 375.5, 
+                "top": 207
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"MAF\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "SIFT"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 371, 
+                "top": 372
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"SIFT\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Show variations [Iteration 3]", 
+            "outputs": [
+                {
+                    "name": "output_html", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 658.5, 
+                "top": 154
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "show_variations_iteration3", 
+            "tool_state": "{\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"translationOption\": \"{\\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"mafOption\\\": {\\\"mafCheckbox\\\": \\\"True\\\", \\\"mafFieldname\\\": \\\"MAF\\\", \\\"__current_case__\\\": 0}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"siftpolyOption\\\": {\\\"__current_case__\\\": 1, \\\"siftpolyCheckbox\\\": \\\"False\\\"}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"translation\\\": \\\"True\\\", \\\"transcriptOption\\\": {\\\"__current_case__\\\": 1, \\\"transcriptCheckbox\\\": \\\"False\\\"}, \\\"geneOption\\\": {\\\"geneCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}}\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Show variations [Iteration 3]", 
+            "outputs": [
+                {
+                    "name": "output_html", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 668.5, 
+                "top": 367
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "show_variations_iteration3", 
+            "tool_state": "{\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"translationOption\": \"{\\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"mafOption\\\": {\\\"mafCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"siftpolyOption\\\": {\\\"siftpolyFieldname\\\": \\\"Eff_SP\\\", \\\"__current_case__\\\": 0, \\\"siftpolyCheckbox\\\": \\\"True\\\"}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"translation\\\": \\\"True\\\", \\\"transcriptOption\\\": {\\\"__current_case__\\\": 1, \\\"transcriptCheckbox\\\": \\\"False\\\"}, \\\"geneOption\\\": {\\\"geneCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}}\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

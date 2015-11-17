@@ -1,0 +1,242 @@
+	{
+	    "a_galaxy_workflow": "true", 
+	    "annotation": "", 
+	    "format-version": "0.1", 
+	    "name": "LactoseIntoleranceDnaIt1",
+	    "steps":{
+	    "0": {
+	    		"annotation": "Choose a VCF File", 
+	    		"id": 0,
+	    		"input_connections": {}, 
+	    		"inputs": [
+	    			{
+	    			"description": "", 
+	    			"name": "input"
+	    			}
+	    		],
+	    		"name": "Input dataset",
+	    		"outputs": [], 
+	    		"position": {
+	    			"left": 20, 
+	    			"top": 100
+	    		 }, 
+	    		"tool_errors": null, 
+	    		"tool_id": null, 
+	    		"tool_state": "{\"name\": \"input\"}", 
+	    		"tool_version": null, 
+	    		"type": "data_input", 
+	    		"user_outputs": []
+	    	},
+	    "1": {
+	                "annotation": "Check VCF Errors", 
+	                "id": 1, 
+	                "input_connections": {
+	                    "input": {
+	                        "id": 0, 
+	                        "output_name": "output"
+	                    }
+	                }, 
+	                "inputs": [], 
+	                "name": "Custom Error Messages", 
+	                "outputs": [
+	                    {
+	                        "name": "check_result", 
+	                        "type": "tabular"
+	                    }
+	                ], 
+	                "position": {
+	                    "left": 200, 
+	                    "top": 100
+	                }, 
+	                "post_job_actions": {}, 
+	                "tool_errors": null, 
+	                "tool_id": "custom_error_messages", 
+	                "tool_state": "{\"__page__\": 0, \"input\": \"null\", \"__rerun_remap_job_id__\": null, \"error_messages\": \"[{\\\"__index__\\\": 0, \\\"showOption\\\": \\\"yes\\\", \\\"searchCondition\\\": {\\\"regularExpFieldname\\\": \\\"columnsExpression\\\", \\\"searchOption\\\": \\\"regexp\\\", \\\"__current_case__\\\": 0}, \\\"customErrorMessage\\\": \\\"The file has not all the required data columns\\\"}, {\\\"__index__\\\": 1, \\\"showOption\\\": \\\"yes\\\", \\\"searchCondition\\\": {\\\"regularExpFieldname\\\": \\\"formatExpression\\\", \\\"searchOption\\\": \\\"regexp\\\", \\\"__current_case__\\\": 0}, \\\"customErrorMessage\\\": \\\"Wrong format\\\"}, {\\\"__index__\\\": 2, \\\"showOption\\\": \\\"yes\\\", \\\"searchCondition\\\": {\\\"regularExpFieldname\\\": \\\"positionExpression\\\", \\\"searchOption\\\": \\\"regexp\\\", \\\"__current_case__\\\": 0}, \\\"customErrorMessage\\\": \\\"The variation is outside the chromosome\\\"}]\"}", 
+	                "tool_version": "latest", 
+	                "type": "tool", 
+	                "user_outputs": []
+	            }, 
+	    		"2": {
+	    			"annotation": " Annotate HGVS Notation (Dna&Coding)", 
+	    			"id": 2, 
+	    			"input_connections": {
+	    				"input": {
+	    				"id": 0, 
+	    				"output_name": "output"
+	    				}
+	    			}, 
+	    			"inputs": [], 
+	    			"name": "SnpEff [Iteration 1]", 
+	    			"outputs": [
+	    			{
+	    			"name": "output", 
+	    			"type": "tabular"
+	    			}, 
+	    			{
+	    			"name": "statsFile", 
+	    			"type": "html"
+	    			}
+	    			], 
+	    			"position": {
+	    			"left": 400, 
+	    			"top": 400
+	    			}, 
+	    			"post_job_actions": {
+	    				"HideDatasetActionoutput": {
+	    					"action_arguments": {}, 
+	    					"action_type": "HideDatasetAction", 
+	    					"output_name": "output"
+	    				},
+	    				"HideDatasetActionstatsFile": {
+	    					"action_arguments": {}, 
+	    					"action_type": "HideDatasetAction", 
+	    					"output_name": "statsFile"
+	    				}
+	    			}, 
+	    			"tool_errors": null, 
+	    			"tool_id": "snpEff_iteration1", 
+	    			"tool_state": "{\"__page__\": 0, \"outputFormat\": \"\\\"vcf\\\"\", \"lof\": \"\\\"False\\\"\", \"inputFormat\": \"\\\"vcf\\\"\", \"canon\": \"\\\"False\\\"\", \"motif\": \"\\\"False\\\"\", \"udLength\": \"\\\"5000\\\"\", \"genomeVersion\": \"\\\"hg19 \\\"\", \"generate_stats\": \"\\\"True\\\"\", \"hgvs\": \"\\\"True\\\"\", \"input\": \"null\", \"translation\": \"\\\"True\\\"\",\"translationOption\": \"{\\\"translation\\\": \\\"True\\\", \\\"hgvsdnaOption\\\": {\\\"hgvsdnaFieldname\\\": \\\"HGVSDna\\\", \\\"hgvsdnaCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"hgvscodingOption\\\": {\\\"hgvscodingFieldname\\\": \\\"HGVSCoding\\\", \\\"hgvscodingCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"hgvsproteinOption\\\": {\\\"hgvsproteinFieldname\\\": \\\"HGVSProtein\\\", \\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1} , \\\"__current_case__\\\": 0}\", \"__rerun_remap_job_id__\": null}", 
+	    			"tool_version": "1.0", 
+	    			"type": "tool", 
+	    			"user_outputs": []
+	    		},	"3": {
+	                "annotation": "Annotate HGVS Notation (Protein)", 
+	                "id": 3, 
+	                "input_connections": {
+	                    "input": {
+	                        "id": 2, 
+	                        "output_name": "output"
+	                    }
+	                }, 
+	                "inputs": [], 
+	                "name": "ENSEMBL variant effect predictor [Iteration 1]", 
+	                "outputs": [
+	                    {
+	                        "name": "output", 
+	                        "type": "tabular"
+	                    }, 
+	                    {
+	                        "name": "output", 
+	                        "type": "vcf"
+	                    }
+	                ], 
+	                "position": {
+	    			"left": 600, 
+	    			"top": 600
+	    			},
+	                "post_job_actions": {
+	    				"HideDatasetActionoutput": {
+	    					"action_arguments": {}, 
+	    					"action_type": "HideDatasetAction", 
+	    					"output_name": "output"
+	    				}
+	    			}, 
+	                "tool_errors": null, 
+	                "tool_id": "ensembl_iteration1", 
+	                "tool_state": "{\"database_options\": \"{\\\"useRefseq\\\": {\\\"use_refseq\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"outputFormat\\\": {\\\"annotateOptions\\\": {\\\"hgvsdnaOption\\\": {\\\"hgvsdnaFieldname\\\": \\\"HGVSDna\\\", \\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvscodingOption\\\": {\\\"hgvscodingFieldname\\\": \\\"HGVSCoding\\\", \\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsproteinOption\\\": {\\\"hgvsproteinFieldname\\\": \\\"HGVSProtein\\\", \\\"hgvsproteinCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0} ,\\\"annotate_vcf\\\": \\\"True\\\", \\\"__current_case__\\\": 0},\\\"__current_case__\\\": 0,\\\"outputFormatOption\\\": \\\"vcf\\\"},\\\"annotateHGVS\\\": {\\\"annotate_hgvs\\\": \\\"True\\\", \\\"__current_case__\\\": 0},\\\"database_options_selector\\\": \\\"offline\\\", \\\"__current_case__\\\": 0}\",\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"species\": \"\\\"homo_sapiens\\\"\", \"__page__\": 0}",            
+	                "tool_version": "1.0.0", 
+	                "type": "tool", 
+	                "user_outputs": []
+	            },
+	    	"4": {
+	    		"annotation": "Search Variations By HGVS Notation", 
+	    		"id": 4, 
+	    		"input_connections": {
+	    			"input": {
+	    			"id": 3, 
+	    			"output_name": "output"
+	    			}
+	    		}, 
+	    		"inputs": [], 
+	    		"name": "SnpSift Filter", 
+	    		"outputs": [
+	    			{
+	    			"name": "output", 
+	    			"type": "tabular"
+	    			}
+	    		], 
+	    		"position": {
+	    			"left": 800, 
+	    			"top": 800
+	    		}, 
+	    		"post_job_actions": {
+	    			"ChangeDatatypeActionoutput": {
+	    				"action_arguments": {
+	    					"newtype": "vcf"
+	    				}, 
+	    				"action_type": "ChangeDatatypeAction", 
+	    				"output_name": "output"
+	    			},
+	    			"HideDatasetActionoutput": {
+	    					"action_arguments": {}, 
+	    					"action_type": "HideDatasetAction", 
+	    					"output_name": "output"
+	    				}
+	    		}, 
+	    		"tool_errors": null, 
+	    		"tool_id": "snpSift_filter", 
+	    		"tool_state": "{\"__page__\": 0, \"expr\": \"\\\"(POS=136608646 & REF='G' & ALT='A')|(POS=136616754 & REF='C' & ALT='A')\\\"\", \"__rerun_remap_job_id__\": null, \"input\": \"null\"}", 
+	    		"tool_version": "latest", 
+	    		"type": "tool", 
+	    		"user_outputs": []
+	    		} , 
+	    	"5": {
+	                "annotation": "Check Search Errors", 
+	                "id": 5, 
+	                "input_connections": {
+	                    "input": {
+	                        "id": 4, 
+	                        "output_name": "output"
+	                    }
+	                }, 
+	                "inputs": [], 
+	                "name": "Custom Error Messages", 
+	                "outputs": [
+	                    {
+	                        "name": "check_result", 
+	                        "type": "tabular"
+	                    }
+	                ], 
+	                "position": {
+	                    "left": 1000, 
+	                    "top": 1000
+	                }, 
+	                "post_job_actions": {}, 
+	                "tool_errors": null, 
+	                "tool_id": "custom_error_messages", 
+	                "tool_state": "{\"__page__\": 0, \"input\": \"null\", \"__rerun_remap_job_id__\": null, \"error_messages\": \"[{\\\"__index__\\\": 0, \\\"showOption\\\": \\\"yes\\\", \\\"searchCondition\\\": {\\\"regularExpFieldname\\\": \\\"notFoundExpression\\\", \\\"searchOption\\\": \\\"regexp\\\", \\\"__current_case__\\\": 0}, \\\"customErrorMessage\\\": \\\"None variations found\\\"}, {\\\"__index__\\\": 1, \\\"showOption\\\": \\\"yes\\\", \\\"searchCondition\\\": {\\\"regularExpFieldname\\\": \\\"formatExpression\\\", \\\"searchOption\\\": \\\"regexp\\\", \\\"__current_case__\\\": 0}, \\\"customErrorMessage\\\": \\\"The HGVS Notation is not correct\\\"}]\"}", 
+	                "tool_version": "latest", 
+	                "type": "tool", 
+	                "user_outputs": []
+	       } 
+	    ,"6":{
+	    		"annotation": "Show Variations List", 
+	    		"id": 6,
+	    		"input_connections": {
+	    			"input": {
+	    		        "id": 4, 
+	    		        "output_name": "output"
+	    		     }
+	    	     }, 
+	    	     "inputs": [], 
+	    	     "name": "Show variations [Iteration 1]", 
+	    	     "outputs": [
+	    	     	  {
+	    		      "name": "output_html", 
+	    		      "type": "html"
+	    		      }
+	    	      ], 
+	    	      "position": {
+	    			"left": 1200, 
+	    			"top": 1200
+	    		  }, 
+	    		  "post_job_actions": {}, 
+	    	      "tool_errors": null, 
+	    	      "tool_id": "show_variations_iteration1", 
+	    	      "tool_state": "{\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"translationOption\": \"{\\\"translation\\\": \\\"True\\\", \\\"hgvsdnaOption\\\": {\\\"hgvsdnaFieldname\\\": \\\"HGVSDna\\\", \\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvscodingOption\\\": {\\\"hgvscodingFieldname\\\": \\\"HGVSCoding\\\", \\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsproteinOption\\\": {\\\"hgvsproteinFieldname\\\": \\\"HGVSProtein\\\", \\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1} , \\\"__current_case__\\\": 0}\",  \"__page__\": 0}",
+	    	      "tool_version": "1.0.0", 
+	    	      "type": "tool", 
+	    	      "user_outputs": []
+	    	}
+	    }
+	}

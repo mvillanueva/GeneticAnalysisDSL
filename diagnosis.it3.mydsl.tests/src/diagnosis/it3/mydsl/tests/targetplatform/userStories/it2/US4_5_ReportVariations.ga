@@ -1,0 +1,60 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "US4_5_ReportVariations", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 375.5, 
+                "top": 207
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Show variations [Iteration 2]", 
+            "outputs": [
+                {
+                    "name": "output_html", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 620, 
+                "top": 208
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "show_variations_iteration2", 
+            "tool_state": "{\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"translationOption\": \"{\\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"translation\\\": \\\"True\\\", \\\"geneOption\\\": {\\\"geneFieldname\\\": \\\"Gene\\\", \\\"geneCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}}\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

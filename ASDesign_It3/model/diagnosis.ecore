@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diagnosis" nsURI="diagnosis" nsPrefix="diagnosis">
+  <eClassifiers xsi:type="ecore:EClass" name="Diagnosis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patientData" lowerBound="1"
+        eType="#//PatientData" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analyses" lowerBound="1"
+        upperBound="-1" eType="#//Analysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="report" lowerBound="1"
+        eType="#//Report" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disease" lowerBound="1"
+        eType="#//Disease" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatientData">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variations" lowerBound="1"
+        eType="#//Variations" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsS" eSuperTypes="#//Filter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Analysis" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="#//Analysis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="order" eType="#//Order"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Report">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reportVariations" lowerBound="1"
+        eType="#//ReportVariations" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReportVariations">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hgvs" eType="#//HgvsR"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gene" eType="#//GeneR"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rsId" eType="#//RsIdR"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prediction" upperBound="-1"
+        eType="#//PredictionR" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transcript" eType="#//TranscriptR"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maf" eType="#//MAFR" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variations">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="format" lowerBound="1"
+        eType="#//Vcf" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="several" eType="#//SeveralPatients"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vcf">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datafile" lowerBound="1"
+        eType="#//DataFile" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataFile" eSuperTypes="#//Input">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RefSeqReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Disease">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Input">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DnaS" eSuperTypes="#//HgvsS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hgvsdna" lowerBound="1"
+        upperBound="-1" eType="#//HgvsDna" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProteinS" eSuperTypes="#//HgvsS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hgvsprotein" lowerBound="1"
+        upperBound="-1" eType="#//HgvsProtein" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsDna" eSuperTypes="#//HgvsNotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsProtein" eSuperTypes="#//HgvsNotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CodingS" eSuperTypes="#//HgvsS">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hgvscoding" lowerBound="1"
+        upperBound="-1" eType="#//HgvsCoding" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsNotation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//RefSeqReference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsCoding" eSuperTypes="#//HgvsNotation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsA"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="#//Analysis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hgvs" eType="#//HgvsA"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gene" eType="#//GeneA"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rsId" eType="#//RsIdA"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transcript" eType="#//TranscriptA"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prediction" upperBound="-1"
+        eType="#//PredictionA" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maf" eType="#//MAFA" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HgvsR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneA"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RsIdA"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneF" eSuperTypes="#//Filter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gene" lowerBound="1" upperBound="-1"
+        eType="#//Gene" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RsIdR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Gene">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hgncId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SeveralPatients"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TranscriptA"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PredictionA">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="#//PredictionAlgorithm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredictionF" eSuperTypes="#//Filter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="#//PredictionAlgorithm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Order">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="criteria" eType="#//OrderCriteria"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OrderCriteria">
+    <eLiterals name="AlphAsc"/>
+    <eLiterals name="AlphDes" value="1"/>
+    <eLiterals name="Max2Min" value="2"/>
+    <eLiterals name="Min2Max" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PredictionAlgorithm">
+    <eLiterals name="Sift"/>
+    <eLiterals name="Polyphen" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredictionR">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="algorithm" eType="#//PredictionAlgorithm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TranscriptR"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Effect">
+    <eLiterals name="Tolerated" literal="Tolerated"/>
+    <eLiterals name="Deleterious" value="4" literal="Deleterious"/>
+    <eLiterals name="Benign" value="5" literal="Benign"/>
+    <eLiterals name="Damaging" value="1" literal="Damaging"/>
+    <eLiterals name="ProbablyD" value="2" literal="ProbablyD"/>
+    <eLiterals name="PossiblyD" value="3" literal="PossiblyD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EffectF" eSuperTypes="#//PredictionF">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effect" upperBound="-1"
+        eType="#//Effect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScoreF" eSuperTypes="#//PredictionF">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minScore" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxScore" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAFA"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAFF" eSuperTypes="#//Filter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MAFR"/>
+</ecore:EPackage>

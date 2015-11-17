@@ -1,0 +1,209 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Diabetes Mellitus Type 2 (Analysis 1)", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 177.0625, 
+                "top": 241
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "ENSEMBL variant effect predictor [Iteration 3]", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 570.5625, 
+                "top": 200
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "ensembl_iteration3", 
+            "tool_state": "{\"database_options\": \"{\\\"outputFormat\\\": {\\\"annotateOptions\\\": {\\\"annotate_vcf\\\": \\\"True\\\", \\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"siftpolyOption\\\": {\\\"siftpolyFieldname\\\": \\\"Eff_SP\\\", \\\"__current_case__\\\": 0, \\\"siftpolyCheckbox\\\": \\\"True\\\"}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"transcriptOption\\\": {\\\"transcriptFieldname\\\": \\\"Transcript\\\", \\\"__current_case__\\\": 0, \\\"transcriptCheckbox\\\": \\\"True\\\"}, \\\"geneOption\\\": {\\\"geneCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}}, \\\"__current_case__\\\": 0, \\\"outputFormatOption\\\": \\\"vcf\\\"}, \\\"__current_case__\\\": 0, \\\"annotateGene\\\": {\\\"annotate_gene\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"database_options_selector\\\": \\\"offline\\\", \\\"useRefseq\\\": {\\\"use_refseq\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"annotateSiftPoly\\\": {\\\"annotate_siftpoly\\\": \\\"True\\\", \\\"__current_case__\\\": 0}, \\\"annotateHGVS\\\": {\\\"annotate_hgvs\\\": \\\"False\\\", \\\"__current_case__\\\": 1}}\", \"input\": \"null\", \"__rerun_remap_job_id__\": null, \"species\": \"\\\"homo_sapiens\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SnpEff [iteration 2]", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "statsFile", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 581.5625, 
+                "top": 364
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "snpEff_iteration2", 
+            "tool_state": "{\"__page__\": 0, \"outputFormat\": \"\\\"vcf\\\"\", \"lof\": \"\\\"False\\\"\", \"inputFormat\": \"\\\"vcf\\\"\", \"canon\": \"\\\"False\\\"\", \"motif\": \"\\\"False\\\"\", \"udLength\": \"\\\"5000\\\"\", \"genomeVersion\": \"\\\"hg19 \\\"\", \"generate_stats\": \"\\\"True\\\"\", \"hgvs\": \"\\\"False\\\"\", \"input\": \"null\", \"translationOption\": \"{\\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"translation\\\": \\\"True\\\", \\\"geneOption\\\": {\\\"geneFieldname\\\": \\\"Gene\\\", \\\"geneCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}}\", \"__rerun_remap_job_id__\": null}", 
+            "tool_version": "latest", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 2, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SnpSift Filter", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 937.0625, 
+                "top": 396
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "snpSift_filter", 
+            "tool_state": "{\"__page__\": 0, \"expr\": \"\\\"EFF[*].GENE='ABCC8' | EFF[*].GENE='CAPN10' | EFF[*].GENE='KCNJ11' | EFF[*].GENE='GCGR' |  EFF[*].GENE='SLC2A2' | EFF[*].GENE='HNF4A' | EFF[*].GENE='INS' |  EFF[*].GENE='INSRR' | EFF[*].GENE='PPARG' | EFF[*].GENE='TCF12' |  EFF[*].GENE='ADIPOQ' | EFF[*].GENE='AKT2' |  EFF[*].GENE='PAX4' |  EFF[*].GENE='MAPK81p1' |EFF[*].GENE='GPD2' | EFF[*].GENE='MNTR1B'  \\\"\", \"__rerun_remap_job_id__\": null, \"input\": \"null\"}", 
+            "tool_version": "latest", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "id": 4, 
+            "input_connections": {
+                "input": {
+                    "id": 3, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 932, 
+                "top": 586
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.0\\\"\", \"algorithm\": \"\\\"sift\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"0.05\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "id": 5, 
+            "input_connections": {
+                "input": {
+                    "id": 4, 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "SiftAndPolyphen", 
+            "outputs": [
+                {
+                    "name": "vcf_output", 
+                    "type": "vcf"
+                }
+            ], 
+            "position": {
+                "left": 928, 
+                "top": 726
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "SPsort1.0", 
+            "tool_state": "{\"sort\": \"{\\\"__current_case__\\\": 1, \\\"sort_prediction\\\": \\\"False\\\"}\", \"__page__\": 0, \"valinitial\": \"\\\"0.15\\\"\", \"algorithm\": \"\\\"poly\\\"\", \"__rerun_remap_job_id__\": null, \"field\": \"\\\"Eff_SP\\\"\", \"input\": \"null\", \"valfinal\": \"\\\"1.0\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "id": 6, 
+            "input_connections": {
+                "input": {
+                    "id": 5, 
+                    "output_name": "vcf_output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Show variations [Iteration 3]", 
+            "outputs": [
+                {
+                    "name": "output_html", 
+                    "type": "html"
+                }
+            ], 
+            "position": {
+                "left": 1167.5, 
+                "top": 710
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "show_variations_iteration3", 
+            "tool_state": "{\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"translationOption\": \"{\\\"hgvsproteinOption\\\": {\\\"hgvsproteinCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"mafOption\\\": {\\\"mafCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"hgvsdnaOption\\\": {\\\"hgvsdnaCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"siftpolyOption\\\": {\\\"siftpolyFieldname\\\": \\\"Eff_SP\\\", \\\"__current_case__\\\": 0, \\\"siftpolyCheckbox\\\": \\\"True\\\"}, \\\"__current_case__\\\": 0, \\\"hgvscodingOption\\\": {\\\"hgvscodingCheckbox\\\": \\\"False\\\", \\\"__current_case__\\\": 1}, \\\"translation\\\": \\\"True\\\", \\\"transcriptOption\\\": {\\\"transcriptFieldname\\\": \\\"Transcript\\\", \\\"__current_case__\\\": 0, \\\"transcriptCheckbox\\\": \\\"True\\\"}, \\\"geneOption\\\": {\\\"geneFieldname\\\": \\\"Gene\\\", \\\"geneCheckbox\\\": \\\"True\\\", \\\"__current_case__\\\": 0}}\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}
